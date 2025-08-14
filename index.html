@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solara - AI-Powered Nutrition Revolution</title>
+    
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://api.emailjs.com">
+    
+    <!-- Optimized font loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap"></noscript>
+    
+    <!-- Font Awesome with loading optimization -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Your existing styles -->
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- EmailJS with defer -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
+    
+    <!-- SEO optimizations -->
+    <meta name="description" content="AI-powered nutrition platform offering personalized meal plans, cultural recipes, and smart fridge technology for optimal health.">
+    <meta name="keywords" content="nutrition, AI, meal planning, healthy eating, personalized diet">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<body>
+    <!-- KEEP ALL YOUR EXISTING BODY CONTENT EXACTLY THE SAME -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-sun"></i>
+                    <span>Solara</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#form-section">Join Waitlist</a></li>
+                </ul>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile navigation menu" title="Open navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">TRANSFORM YOUR NUTRITION • JOIN OUR WAITLIST</div>
+                <h1>AI that crafts your perfect <span>nutrition journey</span></h1>
+                <p>Personalized meal plans, cultural recipes, and smart fridge technology for a healthier, vibrant you.</p>
+                <div class="hero-cta">
+                    <a href="#form-section" class="btn btn-large">Join the Waitlist</a>
+                    <a href="#features" class="btn btn-large btn-secondary">Discover Features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section" id="form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Join the Solara Revolution</h2>
+                    <p>Be among the first to experience our AI-powered nutrition platform. Limited spots available!</p>
+                </div>
+                
+                <form id="waitlist-form" class="waitlist-form">
+                    <input type="hidden" name="timestamp" id="timestamp">
+                    
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="John Smith" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="goal">Primary Health Goal</label>
+                        <select id="goal" name="goal" class="form-control" title="Select your primary health goal" required>
+                            <option value="" disabled selected>Select your goal</option>
+                            <option value="weight-loss">Weight Loss</option>
+                            <option value="muscle-gain">Muscle Gain</option>
+                            <option value="healthy-eating">Healthy Eating</option>
+                            <option value="dietary-management">Dietary Management</option>
+                            <option value="energy-boost">Energy Boost</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="diet">Dietary Preferences</label>
+                        <select id="diet" name="diet" class="form-control" title="Select your dietary preferences">
+                            <option value="" disabled selected>Select your diet</option>
+                            <option value="none">No Restrictions</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="gluten-free">Gluten-Free</option>
+                            <option value="keto">Keto</option>
+                            <option value="paleo">Paleo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label class="form-label">What are your biggest nutrition challenges? <span class="form-note">(Optional but helpful)</span></label>
+                        <textarea id="challenges" name="challenges" class="form-control" placeholder="I struggle with meal planning, I don't have time to cook, I need help with portion control..."></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label class="form-label" for="referral">How did you hear about Solara?</label>
+                        <select id="referral" name="referral" class="form-control" title="Select how you heard about Solara">
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="social-media">Social Media</option>
+                            <option value="friend">Friend or Family</option>
+                            <option value="blog">Blog or Article</option>
+                            <option value="podcast">Podcast</option>
+                            <option value="search">Search Engine</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <button type="submit" class="btn btn-large">
+                            Join Now & Get Early Access
+                        </button>
+                    </div>
+                </form>
+                
+                <div id="form-message" class="form-message"></div>
+                
+                <div class="loading" id="loading">
+                    <div class="loading-spinner"></div>
+                    Securing your spot...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-header">
+                <h2>Our Story</h2>
+                <p>Discover the passion and purpose behind Solara Nutrition</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image"></div>
+                
+                <div class="about-text">
+                    <h3>Empowering Health Through Innovation</h3>
+                    <p>Solara Nutrition was founded in 2023 with a simple mission: to make personalized nutrition accessible to everyone. Our journey began when our founder, Dr. Sarah Johnson, struggled to find a nutrition solution that understood her cultural food preferences while helping her achieve her weight loss goals.</p>
+                    <p>Frustrated by one-size-fits-all approaches, Sarah assembled a team of nutrition scientists, AI experts, and chefs to create a platform that adapts to your unique needs. Today, Solara combines cutting-edge technology with evidence-based nutrition to transform how people approach their health.</p>
+                    
+                    <div class="about-values">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="value-text">
+                                <h4>Health First</h4>
+                                <p>We prioritize your well-being over quick fixes, focusing on sustainable health transformations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="value-text">
+                                <h4>Innovative Solutions</h4>
+                                <p>Our AI continuously learns from the latest nutrition research to provide cutting-edge recommendations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="value-text">
+                                <h4>Culinary Diversity</h4>
+                                <p>We celebrate global cuisines, offering authentic recipes that honor cultural food traditions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy-section">
+        <div class="container">
+            <div class="philosophy-container">
+                <h2>Our Nutrition Philosophy</h2>
+                <p>Evidence-based approaches that respect your individuality</p>
+                
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h3>Personalization</h3>
+                        <p>No two bodies are alike. Our AI creates meal plans tailored to your unique biology, goals, and preferences.</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Balance Over Restriction</h3>
+                        <p>We focus on nourishment, not deprivation. Enjoy all foods while achieving your health goals.</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Science-Based</h3>
+                        <p>Our recommendations are grounded in the latest nutritional research and clinical studies.</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>Culinary Diversity</h3>
+                        <p>Celebrate your cultural heritage through food while meeting your nutritional goals.</p>
+                    </div>
+                </div>
+                
+                <div class="fun-facts">
+                    <div class="fact-item">
+                        <i class="fas fa-utensils"></i>
+                        <h4>4,500+</h4>
+                        <p>Global Recipes</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i class="fas fa-weight"></i>
+                        <h4>500K+ lbs</h4>
+                        <p>Collectively Lost</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i class="fas fa-smile"></i>
+                        <h4>98%</h4>
+                        <p>User Satisfaction</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Sustainable</h4>
+                        <p>Food Waste Reduced</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <h2>Why Thousands Trust Solara</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">28,500+</div>
+                    <div class="stat-text">Waitlist Members</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-number">98.7%</div>
+                    <div class="stat-text">User Satisfaction</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="stat-number">4.5M+</div>
+                    <div class="stat-text">Recipes Available</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-text">Pounds Lost</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Revolutionary Nutrition Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Meal Crafting</h3>
+                    <p>Our advanced AI creates personalized meal plans based on your goals, preferences, and dietary needs. Get a new plan every week that evolves with you.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Global Cuisine Library</h3>
+                    <p>Access thousands of authentic recipes from around the world. From Japanese sushi to Mexican tacos, enjoy diverse meals that fit your nutrition goals.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Smart Fridge Scan</h3>
+                    <p>Simply snap a photo of your fridge and pantry. Solara will suggest delicious recipes using what you already have, reducing waste and saving money.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Progress Intelligence</h3>
+                    <p>Track your nutrition, weight, and health metrics with smart insights. Our AI adjusts your plan based on real results and feedback.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Smart Grocery Lists</h3>
+                    <p>Automated shopping lists sorted by aisle with nutrition ratings. Sync with grocery delivery services for one-click ordering.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3>Allergy & Sensitivity Filters</h3>
+                    <p>Customize your profile to avoid allergens and ingredients you're sensitive to. Solara automatically excludes these from your meal plans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>Life-Changing Results</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Solara completely transformed my relationship with food. I've lost 42 pounds in 6 months without feeling deprived. The cultural recipes make healthy eating exciting!"</p>
+                    <div class="user">
+                        <div class="user-avatar">MJ</div>
+                        <div class="user-info">
+                            <h4>Marcus Johnson</h4>
+                            <p>Lost 42 lbs in 6 months</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The fridge scan feature saves me $150/month on groceries while reducing food waste. I'm eating healthier than ever with minimal effort!"</p>
+                    <div class="user">
+                        <div class="user-avatar">SC</div>
+                        <div class="user-info">
+                            <h4>Sophia Chen</h4>
+                            <p>Busy Executive</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"As a vegan with gluten sensitivity, finding recipes was exhausting. Solara creates perfect meals I actually want to eat. My energy levels have never been better!"</p>
+                    <div class="user">
+                        <div class="user-avatar">AP</div>
+                        <div class="user-info">
+                            <h4>Anaya Patel</h4>
+                            <p>Vegan & Gluten-Free</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-sun"></i> Solara
+                </div>
+                <p class="footer-text">Intelligent nutrition for a vibrant, healthier you. Join the revolution today.</p>
+                
+                <div class="social-icons">
+                    <a href="https://x.com/solara_apps" aria-label="Follow Solara on X (Twitter)" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/solara.nutrition/" aria-label="Follow Solara on Instagram" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/SolaraNutrition" aria-label="Follow Solara on Facebook" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.quora.com/profile/Solara-46" aria-label="Follow Solara on Quora" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-quora"></i>
+                    </a>
+                    <a href="https://www.reddit.com/user/FeedbackSilva" aria-label="Follow Solara on Reddit" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-reddit-alien"></i>
+                    </a>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#">About Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                </div>
+                
+                <div class="copyright">
+                    &copy; 2025 Solara Nutrition. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Updated script import -->
+    <script type="module" src="/script.js"></script>
+    
+    <!-- Vercel Analytics (optional) -->
+    <script>
+        if (typeof window !== 'undefined') {
+            import('@vercel/analytics').then(({ inject }) => inject()).catch(() => {});
+        }
+    </script>
+</body>
+</html>
